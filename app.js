@@ -35,7 +35,7 @@ function generarNumeroSecreto(){
     if(listasNumerosSorteados.length == numeroMaximo){
         asignarTextoElemento('p','Ya se sortearon todos los numeros posibles');
     }else{
-        if (listasNumetoSorteados.includes(numeroGenerado)) {
+        if (listasNumerosSorteados.includes(numeroGenerado)) {
             return generarNumeroSecreto();
         }else{
             listasNumerosSorteados.push(numeroGenerado);
@@ -47,7 +47,7 @@ function generarNumeroSecreto(){
 
 function  condicionesIniciales() {
     asignarTextoElemento('h1', 'Juego del número secreto');
-    asignarTextoElemento('p', 'Indica un numero del 1 al 10');
+    asignarTextoElemento('p', `Indica un numero del 1 al ${numeroMaximo}`);
     numeroSecreto = generarNumeroSecreto();
     intentos = 1;
 }
